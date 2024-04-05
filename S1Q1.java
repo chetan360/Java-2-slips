@@ -1,13 +1,13 @@
 
 import java.util.logging.*;
-import javax.swing.SwingUtilities;
 
 public class S1Q1 {
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
+        Thread t = new Thread(() -> {
             while(true) {
                 for(char ch = 'A'; ch <= 'Z'; ch++)
-                    System.out.println(ch);
+                    System.out.print(ch + " ");
+                System.out.println();
                 
                 try {
                     Thread.sleep(2000);
@@ -18,5 +18,6 @@ public class S1Q1 {
             }
         });
         
+        t.start();
     }
 }
